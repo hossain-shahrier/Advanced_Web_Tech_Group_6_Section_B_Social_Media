@@ -32,3 +32,20 @@ Route::group(['middleware' => ['session']], function () {
     Route::post('/message', 'UserController@send');
     // Route::get('/user/details/{id}', 'UserController@details')->name('user.details');
 });
+
+
+
+//business part
+
+Route::get('/business/login','b_login_controller@login');
+Route::post('/business/login','b_login_controller@verify');
+
+
+Route::group(['middleware'=>['b_s_f']],function (){
+    
+    Route::get('/business/home','b_home_controller@home');
+
+});
+
+
+
