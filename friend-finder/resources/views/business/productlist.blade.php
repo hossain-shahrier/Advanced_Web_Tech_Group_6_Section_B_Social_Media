@@ -45,60 +45,32 @@
 <!-- header end-->
 
 
-
-<!-- product card start-->
-
-<div class="card">
-    <div class="img1">
-  <img src="/images/1.jpg" alt="Denim Jeans" style="width:50%">
-  </div>
-  <h1>Samsung Mobile</h1>
-  <p class="price">$1000.99</p>
-  <p>Some text about the samsung phone..</p>
-  <p><button>Add to Cart</button></p>
-</div>
-
-
-<!-- product card end-->
-
-
-
-
-
-
+<form action="" method="post">
+    <table border="2">
     
-</body>
+   
 
-<style>
+    <tr>
+    <td>Id</td>
+    <td>Product Name</td>
+    <td>Price</td>
+    <td>Description</td>
+    </tr>
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 25%;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
+  @foreach($add_products as $add_product) 
+  
 
-.price {
-  color: grey;
-  font-size: 22px;
-}
+    <tr>
+    <td>{{$add_product['id']}}</td>
+    <td>{{$add_product['product_name']}}</td>
+    <td>{{$add_product['price']}}</td>
+    <td>{{$add_product['description']}}</td>
+    <tr>
 
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
+    @endforeach
 
-.card button:hover {
-  opacity: 0.7;
-}
+    </table>
+    </form>
 
-</style>
-</html>
+
+    </html>

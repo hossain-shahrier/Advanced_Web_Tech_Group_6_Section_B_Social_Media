@@ -36,6 +36,9 @@ Route::post('/business/login','b_login_controller@verify');
 Route::group(['middleware'=>['b_s_f']],function (){
     
     Route::get('/business/home','b_home_controller@home');
+    route::get('/business/create/post','b_post_controller@create_post');
+    route::post('/business/create/post','b_post_controller@insert_post');
+    route::get('/business/product/list','b_product_list_controller@list');
 
 });
 
