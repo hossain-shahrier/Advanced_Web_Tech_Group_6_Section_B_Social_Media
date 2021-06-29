@@ -19,18 +19,24 @@ class LoginController extends Controller
             ->first();
 
         if ($user) {
-            if ($user->type == 'User' || $user->type == 'Job' || $user->type == 'Business') {
-                $req->session()->put('username', $user->username);
-                $req->session()->put('email', $user->email);
-                $req->session()->put('type', $user->type);
-                return redirect('/home');
-            } elseif ($user->type == 'Admin') {
-                $req->session()->put('username', $user->username);
-                $req->session()->put('email', $user->email);
-                $req->session()->put('type', $user->type);
-                return redirect('/home');
+            if ($user->banned != 'banned') {
+                if ($user->type == 'User' || $user->type == 'Job' || $user->type == 'Business') {
+                    $req->session()->put('username', $user->username);
+                    $req->session()->put('email', $user->email);
+                    $req->session()->put('id', $user->id);
+                    $req->session()->put('type', $user->type);
+                    return redirect('/home');
+                } elseif ($user->type == 'Admin') {
+                    $req->session()->put('username', $user->username);
+                    $req->session()->put('email', $user->email);
+                    $req->session()->put('type', $user->type);
+                    return redirect('/home');
+                } else {
+                    $req->session()->flash('msg', 'invaild username or password');
+                    return redirect('/');
+                }
             } else {
-                $req->session()->flash('msg', 'invaild username or password');
+                $req->session()->flash('msg', 'User is banned');
                 return redirect('/');
             }
         } else {
