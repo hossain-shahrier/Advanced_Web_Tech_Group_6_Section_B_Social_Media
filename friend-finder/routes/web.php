@@ -20,7 +20,14 @@ Route::get('/registration', 'RegiController@index');
 Route::post('/registration', 'RegiController@create');
 
 Route::group(['middleware' => ['session']], function () {
-
-    Route::get('/home', 'HomeController@index');
-    // Route::get('/user/details/{id}', 'UserController@details')->name('user.details');
+    // Routes for admin
+    Route::get('admin/home', 'AdminController@index')->middleware('session')->name('admin.home');
+    Route::post('/home', 'HomeController@index')->middleware('session');
 });
+
+// Admin panel routes
+// Edit User's Information
+Route::get('/admin/user/edit/{id}', 'UserController@edit');
+Route::post('/admin/user/edit/{id}', 'UserController@update');
+Route::get('/admin/user/delete/{id}', 'UserController@destroy');
+Route::get('/admin/user/action/{id}', 'UserController@action');

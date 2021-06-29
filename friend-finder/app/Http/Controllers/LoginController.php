@@ -14,7 +14,7 @@ class LoginController extends Controller
 
     public function verify(Request $req)
     {
-        $user = User::where('username', $req->username)
+        $user = User::where('user_name', $req->username)
             ->where('password', $req->password)
             ->first();
 
@@ -24,11 +24,13 @@ class LoginController extends Controller
                 $req->session()->put('email', $user->email);
                 $req->session()->put('type', $user->type);
                 return redirect('/home');
-            } elseif ($user->type == 'Admin') {
-                $req->session()->put('username', $user->username);
+            } elseif ($user->type == 'Admin' || 'admin') {
+
+
                 $req->session()->put('email', $user->email);
+                $req->session()->put('password', $user->password);
                 $req->session()->put('type', $user->type);
-                return redirect('/home');
+                return redirect('admin/home');
             } else {
                 $req->session()->flash('msg', 'invaild username or password');
                 return redirect('/');

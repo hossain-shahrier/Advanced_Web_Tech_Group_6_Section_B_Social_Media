@@ -16,10 +16,10 @@ class RegiController extends Controller
     public function create(RegistrationRequest $req)
     {
         if ($req->password == $req->cpassword) {
-            $u = User::where('username', $req->username)
+            $user = User::where('user_name', $req->username)
                 ->where('email', $req->email)
                 ->first();
-            if ($u) {
+            if ($user) {
                 $req->session()->flash('msg', 'user already exists');
                 return redirect('/registration');
             } else {
