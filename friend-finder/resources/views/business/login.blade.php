@@ -31,14 +31,25 @@
     </div>
 
     <!-- Login Form -->
-    <form method="get" action="/business/home">
+    <form method="post">
     @csrf
       <input type="text" id="uname" class="fadeIn second" name="uname" placeholder="User Name">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="submit" class="fadeIn fourth" value="Log In" href="/business/home">
       <!-- <button class="btn btn-primary" href="/business/home">Log in</button> -->
 
     </form>
+
+    <div class="error_message">
+{{session('mssg')}}<br>
+@foreach($errors->all() as $error)
+{{$error}}<br>
+@endforeach
+</div>
+
+
+
+
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
@@ -320,6 +331,9 @@ input[type=text]:placeholder {
 
 #icon {
   width:60%;
+}
+.error_message{
+    color:#56baed;
 }
 
 </style>

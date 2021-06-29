@@ -28,6 +28,16 @@ Route::group(['middleware' => ['session']], function () {
 
 
 //business part
-Route::get('/business/home','b_home_controller@home');
+
 Route::get('/business/login','b_login_controller@login');
 Route::post('/business/login','b_login_controller@verify');
+
+
+Route::group(['middleware'=>['b_s_f']],function (){
+    
+    Route::get('/business/home','b_home_controller@home');
+
+});
+
+
+
