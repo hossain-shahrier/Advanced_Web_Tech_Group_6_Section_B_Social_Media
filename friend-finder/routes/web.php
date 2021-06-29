@@ -24,3 +24,10 @@ Route::group(['middleware' => ['session']], function () {
     Route::get('/home', 'HomeController@index');
     // Route::get('/user/details/{id}', 'UserController@details')->name('user.details');
 });
+
+
+
+//business part
+Route::get('/business/home','b_home_controller@home');
+Route::get('/business/login','b_login_controller@login');
+Route::post('/business/login','b_login_controller@verify');
