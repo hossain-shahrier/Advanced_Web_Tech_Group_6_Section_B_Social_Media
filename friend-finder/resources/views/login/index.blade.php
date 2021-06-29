@@ -17,16 +17,16 @@
         <table>
             @csrf
             <tr>
-                <td>Username</td>
-                <td><input type="text" name="username" value="{{ old('username') }}"></td>
+                <td>Username :</td>
+                <td><input class="form-control" type="text" name="username" value="{{ old('username') }}"></td>
             </tr>
             <tr>
-                <td>Password</td>
-                <td><input type="password" name="password" value="{{ old('password') }}"></td>
+                <td>Password :</td>
+                <td><input class="form-control" type="password" name="password" value="{{ old('password') }}"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Login" value="Login"></td>
+                <td><input type="submit" name="Login" value="Login" class="btn btn-primary"></td>
             </tr>
         </table>
     </form>

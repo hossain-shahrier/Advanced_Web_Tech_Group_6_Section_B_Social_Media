@@ -22,5 +22,13 @@ Route::post('/registration', 'RegiController@create');
 Route::group(['middleware' => ['session']], function () {
 
     Route::get('/home', 'HomeController@index');
+    Route::get('/profile', 'UserController@profile');
+    Route::post('/profile', 'UserController@post');
+    Route::get('/about', 'UserController@about');
+    Route::get('/edit', 'UserController@edit');
+    Route::post('/edit', 'UserController@update');
+    Route::get('/contact', 'UserController@contact');
+    Route::get('/message', 'UserController@message');
+    Route::post('/message', 'UserController@send');
     // Route::get('/user/details/{id}', 'UserController@details')->name('user.details');
 });
