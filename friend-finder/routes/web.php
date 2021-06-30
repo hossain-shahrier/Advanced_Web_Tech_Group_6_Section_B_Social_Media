@@ -42,6 +42,12 @@ Route::post('/business/login','b_login_controller@verify');
     route::get('/business/product/delete/{id}','b_product_list_controller@delete');
     route::get('/business/product/edit/{id}','b_product_list_controller@showdata');
     route::post('/business/product/edit/{id}','b_product_list_controller@update_data');
+    route::get('/business/message','messagecontroller@index');
+    route::post('/business/message','messagecontroller@sendmessage');
+    
+    route::get('/business/blogpost','b_blogpostcontroller@createblog');
+    route::post('/business/blogpost','b_blogpostcontroller@insertblog');
+
     
 
     

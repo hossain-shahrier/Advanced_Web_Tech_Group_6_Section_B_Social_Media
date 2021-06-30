@@ -47,57 +47,38 @@
 
 
 
-
-
-
 <!-- content start -->
 <div class="container">
 	<div class="row">
 	    
 	    <div class="col-md-8 col-md-offset-2">
 	        
-    		<h1>Add product</h1>
+    		<h1>Send your message</h1>
     		
     		<form action="" method="post">
             @csrf
     		    
     		    <div class="form-group ">
-    		        <label for="slug">Product name<span class="require" required>*</span></label>
-    		        <input type="text" class="form-control" name="product_name" />
+    		        <!-- <label for="slug">Product name<span class="require" required>*</span></label> -->
+    		        <input type="text" class="form-control" name="mobilenumber" placeholder="Mobile Number"/>
     		    
     		    </div>
     		    
-    		    <div class="form-group">
-    		        <label for="title">Price <span class="require" required>*</span></label>
-    		        <input type="text" class="form-control" name="price" />
-    		    </div>
     		    
+    	    		    
     		    <div class="form-group">
-    		        <label for="description" required>Description</label>
-    		        <textarea rows="5" class="form-control" name="description" ></textarea>
-    		    </div>
-    		    
-                
-                
-
-	    
-    		    
-    		    <div class="form-group">
-    		        <button type="submit" class="btn btn-primary" >
-    		            Create
+    		        <button type="Send Message" class="btn btn-primary" >
+    		            Send message
     		        </button>
-    		        <button class="btn btn-default" href="business/home">
-    		            Back
-    		        </button>
+    		        
+    		        
     		    </div>
     		    
     		</form>
 
-            @if(Session::has('msg'))
-                <div class="alert alert-success" role="alert" style="width:20%">
-                    {{ Session::get('msg') }}
-                </div>
-                @endif
+            {{session('mobile_message')}}
+
+            
 		</div>
 		
 	</div>

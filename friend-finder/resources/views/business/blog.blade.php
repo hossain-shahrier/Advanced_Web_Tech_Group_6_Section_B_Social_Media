@@ -22,7 +22,7 @@
   <div class="container-fluid">
    
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/business/home">Home</a></li>
+      <li class="active"><a href="#">Home</a></li>
       <li><a href="/business/message">Message</a></li>
       <li><a href="/business/create/post">Create Post</a></li>
       <li><a href="/business/product/list">Product List</a></li>
@@ -45,59 +45,51 @@
 <!-- header end-->
 
 
-
-
-
-
-
 <!-- content start -->
 <div class="container">
 	<div class="row">
 	    
 	    <div class="col-md-8 col-md-offset-2">
 	        
-    		<h1>Add product</h1>
+    		<h1>Add Blog</h1>
     		
-    		<form action="" method="post">
+    		<form action="" method="post" enctype="multipart/form-data">
             @csrf
     		    
-    		    <div class="form-group ">
-    		        <label for="slug">Product name<span class="require" required>*</span></label>
-    		        <input type="text" class="form-control" name="product_name" />
+            <div class="form-group ">
+                    <label for="slug">Image Upload<span class="require" required>*</span></label>
+    		        <input type="file" class="form-control" name="blog_image" /> <br>
+                    <button type="submit">Upload file</button>
     		    
     		    </div>
-    		    
-    		    <div class="form-group">
-    		        <label for="title">Price <span class="require" required>*</span></label>
-    		        <input type="text" class="form-control" name="price" />
-    		    </div>
-    		    
-    		    <div class="form-group">
-    		        <label for="description" required>Description</label>
-    		        <textarea rows="5" class="form-control" name="description" ></textarea>
-    		    </div>
-    		    
-                
-                
 
-	    
+    		    <div class="form-group ">
+    		        <label for="slug">Title<span class="require" required>*</span></label>
+    		        <input type="text" class="form-control" name="blog_title" />
     		    
+    		    </div>
+    		    
+    		    
+    		    <div class="form-group">
+    		        <label for="description" required>Write Here</label>
+    		        <textarea rows="5" class="form-control" name="blog_description" ></textarea>
+    		    </div>
+    		    
+               		    
     		    <div class="form-group">
     		        <button type="submit" class="btn btn-primary" >
-    		            Create
+    		            Post
     		        </button>
-    		        <button class="btn btn-default" href="business/home">
-    		            Back
-    		        </button>
+    		    
     		    </div>
     		    
     		</form>
 
-            @if(Session::has('msg'))
+            <!-- @if(Session::has('msg'))
                 <div class="alert alert-success" role="alert" style="width:20%">
                     {{ Session::get('msg') }}
                 </div>
-                @endif
+                @endif -->
 		</div>
 		
 	</div>
