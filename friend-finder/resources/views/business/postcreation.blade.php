@@ -22,10 +22,10 @@
   <div class="container-fluid">
    
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="/business/home">Home</a></li>
       <li><a href="#">Message</a></li>
       <li><a href="/business/create/post">Create Post</a></li>
-      <li><a href="#">Create group</a></li>
+      <li><a href="/business/product/list">Product List</a></li>
       <li><a href="#">Blog</a></li>
       <li><a href="#">My Profile</a></li>
 

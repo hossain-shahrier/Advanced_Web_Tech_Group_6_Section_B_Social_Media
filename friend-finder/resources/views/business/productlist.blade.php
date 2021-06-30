@@ -22,7 +22,7 @@
   <div class="container-fluid">
    
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="/business/home">Home</a></li>
       <li><a href="#">Message</a></li>
       <li><a href="/business/create/post">Create Post</a></li>
       <li><a href="/business/product/list">Product List</a></li>
@@ -55,6 +55,8 @@
     <td>Product Name</td>
     <td>Price</td>
     <td>Description</td>
+    <td>operation</td>
+
     </tr>
 
   @foreach($add_products as $add_product) 
@@ -65,12 +67,19 @@
     <td>{{$add_product['product_name']}}</td>
     <td>{{$add_product['price']}}</td>
     <td>{{$add_product['description']}}</td>
+    <td > <a href="/business/product/delete/{{$add_product['id']}}">delete</a></td>
     <tr>
 
     @endforeach
 
     </table>
     </form>
+    @if(Session::has('message'))
+                <div class="alert alert-success" role="alert" style="width:20%">
+                    {{ Session::get('message') }}
+                </div>
+                @endif
+
 
 
     </html>

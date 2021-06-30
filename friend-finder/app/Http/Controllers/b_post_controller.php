@@ -23,12 +23,12 @@ class b_post_controller extends Controller
 
          if (DB::table('add_products')->insert([
             
-         "product_name" => $add_product->product_name,
-         "price" => $add_product->price,
-         "description" => $add_product->description,
+        //  "product_name" => $add_product->product_name,
+        //  "price" => $add_product->price,
+        //  "description" => $add_product->description,
 
         ])) {
-            $req->session()->flash('msg', 'successful!');
+            $req->session()->flash('msg', 'successful added');
             return view('business.postcreation');
         } else {
             $req->session()->flash('msg', 'UNsuccessful!');

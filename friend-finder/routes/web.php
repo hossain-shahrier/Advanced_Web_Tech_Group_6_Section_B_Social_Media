@@ -39,6 +39,8 @@ Route::group(['middleware'=>['b_s_f']],function (){
     route::get('/business/create/post','b_post_controller@create_post');
     route::post('/business/create/post','b_post_controller@insert_post');
     route::get('/business/product/list','b_product_list_controller@list');
+    route::get('/business/product/delete/{id}','b_product_list_controller@delete');
+
 
 });
 
