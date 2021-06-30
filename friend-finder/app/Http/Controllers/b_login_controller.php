@@ -9,12 +9,16 @@ use Validator;
 class b_login_controller extends Controller
 {
     public function login(){
+        
         return view('business.login');
     }
 
 
     public function verify(Request $req){
         
+        $req->session()->put('uname',$req->uname);
+        $req->session()->put('password',$req->password);
+
         $validation=Validator::make($req-> all(),[
             'uname'=>'required',
             'password'=>'required'

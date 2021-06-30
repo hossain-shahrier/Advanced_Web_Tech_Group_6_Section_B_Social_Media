@@ -20,15 +20,13 @@
 <!-- header start-->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <!-- <div class="navbar-header">
-      <!-- <a class="navbar-brand" href="#">BusinessPage</a> -->
-    <!-- </div> --> -->
+   
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Message</a></li>
-      <li><a href="#">Create Post</a></li>
-      <li><a href="#">Create group</a></li>
-      <li><a href="#">Blog</a></li>
+      <li><a href="/business/message">Message</a></li>
+      <li><a href="/business/create/post">Create Post</a></li>
+      <li><a href="/business/product/list">Product List</a></li>
+      <li><a href="/business/blogpost">Blog</a></li>
       <li><a href="#">My Profile</a></li>
 
     </ul>
@@ -47,60 +45,75 @@
 <!-- header end-->
 
 
-
-<!-- product card start-->
-
-<div class="card">
-    <div class="img1">
-  <img src="/images/1.jpg" alt="Denim Jeans" style="width:50%">
+<div class="container">
+  <div class="well">
+      <div class="media">
+      	<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150">
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 1</h4>
+          <p class="text-right">By Francisco</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
   </div>
-  <h1>Samsung Mobile</h1>
-  <p class="price">$1000.99</p>
-  <p>Some text about the samsung phone..</p>
-  <p><button>Add to Cart</button></p>
+   <div class="well">
+      <div class="media">
+  		<a class="pull-left" href="#">
+    		<img class="media-object" src="http://placekitten.com/150/150">
+  		</a>
+  		<div class="media-body">
+    		<h4 class="media-heading">Receta 2</h4>
+          <p class="text-right">By Anailuj</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+Aliquam in felis sit amet augue.</p>
+          <ul class="list-inline list-unstyled">
+  			<li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+            <li>|</li>
+            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+            <li>|</li>
+            <li>
+               <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+            </li>
+            <li>|</li>
+            <li>
+            <!-- Use Font Awesome http://fortawesome.github.io/Font-Awesome/ -->
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-twitter-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </li>
+			</ul>
+       </div>
+    </div>
+  </div>
 </div>
-
-
-<!-- product card end-->
-
-
-
-
-
-
-    
-</body>
-
-<style>
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 25%;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.price {
-  color: grey;
-  font-size: 22px;
-}
-
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.card button:hover {
-  opacity: 0.7;
-}
-
-</style>
-</html>
