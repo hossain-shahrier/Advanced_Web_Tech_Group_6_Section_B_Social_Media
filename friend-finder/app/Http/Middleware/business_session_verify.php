@@ -16,7 +16,7 @@ class business_session_verify
      */
     public function handle(Request $req, Closure $next)
     {
-    if($req->session()->has('uname','password'))
+    if($req->session()->has('uname'))
     {
        //session or cookies
        return $next($req);

@@ -33,16 +33,17 @@ Route::get('/business/login','b_login_controller@login');
 Route::post('/business/login','b_login_controller@verify');
 
 
-Route::group(['middleware'=>['b_s_f']],function (){
+
     
-    Route::get('/business/home','b_home_controller@home');
+    Route::get('/business/home','b_home_controller@home')->middleware('b_s_f');
     route::get('/business/create/post','b_post_controller@create_post');
     route::post('/business/create/post','b_post_controller@insert_post');
     route::get('/business/product/list','b_product_list_controller@list');
     route::get('/business/product/delete/{id}','b_product_list_controller@delete');
+    route::get('/business/product/edit/{id}','b_product_list_controller@showdata');
+    route::post('/business/product/edit/{id}','b_product_list_controller@update_data');
+    
 
-
-});
-
+    
 
 

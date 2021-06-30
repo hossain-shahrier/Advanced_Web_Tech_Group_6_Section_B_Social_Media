@@ -67,7 +67,14 @@
     <td>{{$add_product['product_name']}}</td>
     <td>{{$add_product['price']}}</td>
     <td>{{$add_product['description']}}</td>
-    <td > <a href="/business/product/delete/{{$add_product['id']}}">delete</a></td>
+    <td > 
+       
+       <a href="/business/product/delete/{{$add_product['id']}}">delete</a>
+       <a href="/business/product/edit/{{$add_product['id']}}">edit</a>
+    
+    </td>
+    
+
     <tr>
 
     @endforeach

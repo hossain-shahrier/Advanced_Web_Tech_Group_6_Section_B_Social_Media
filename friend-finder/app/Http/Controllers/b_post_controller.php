@@ -8,6 +8,7 @@ use App\Models\add_product;
 class b_post_controller extends Controller
 {
     public function create_post(){
+        // $req->session()->put('uname',$req->uname);
         return view('business.postcreation');
     }
 
