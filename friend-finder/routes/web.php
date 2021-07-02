@@ -23,6 +23,7 @@ Route::group(['middleware' => ['session']], function () {
     // Routes for admin
     Route::get('admin/home', 'AdminController@index')->middleware('session')->name('admin.home');
     Route::post('/home', 'HomeController@index')->middleware('session');
+    Route::get('/admin/businesses', 'BusinessController@index')->middleware('session');
 });
 
 // Admin panel routes
@@ -31,3 +32,7 @@ Route::get('/admin/user/edit/{id}', 'UserController@edit');
 Route::post('/admin/user/edit/{id}', 'UserController@update');
 Route::get('/admin/user/delete/{id}', 'UserController@destroy');
 Route::get('/admin/user/action/{id}', 'UserController@action');
+// Business Information
+Route::get('/admin/business/edit/{id}', 'BusinessController@edit');
+Route::post('/admin/business/edit/{id}', 'BusinessController@update');
+Route::get('/admin/business/delete/{id}', 'BusinessController@destroy');

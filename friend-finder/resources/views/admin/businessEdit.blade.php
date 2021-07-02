@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home</title>
+    <title>User Edit</title>
     <style>
         header {
             height: 7.5rem;
@@ -111,9 +111,9 @@
         }
 
         .sidebar {
-            position: fixed;
+            position: absolute;
             width: 15%;
-            height: 100vh;
+            height: 100%;
             background: #312450;
             align-items: center;
             display: flex;
@@ -134,15 +134,9 @@
         }
 
 
-        /* .content {
-            width: 100%;
-            float: left;
-        } */
 
         .container {
-
-            margin-top: 100px;
-            margin-left: 200px;
+            margin-top: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -154,16 +148,28 @@
             padding: 35px;
         }
 
-        td a {
-            background-color: #763A7C;
-            padding: 5px 15px;
-            border-radius: 50px;
-            color: whitesmoke;
-            cursor: pointer;
+
+
+        input {
+            border: 2px solid #763A7C;
+            border-radius: 10px;
+            padding: 10px;
         }
 
-        td a:hover {
-            background-color: #4C2650;
+        .submit {
+            color: whitesmoke;
+            border-radius: 50px;
+            border-style: none;
+            background-color: #763A7C;
+        }
+
+        .submit:hover {
+            background-color: #5B2E5F;
+        }
+
+        .error {
+            padding-bottom: 2px;
+            margin-left: 100px;
         }
     </style>
     <link rel="stylesheet" href="./css/styles.css">
@@ -171,8 +177,6 @@
 
 <body>
     <header class="header">
-
-
         <div class="wrap">
             <div class="logo">
                 Logo
@@ -182,7 +186,6 @@
             </div>
         </div>
     </header>
-    <div></div>
     <div class="hero">
         <a href="/logout">Logout</a>
     </div>
@@ -190,40 +193,49 @@
         <nav class="nav">
             <ul>
                 <li><a href="/admin/home">Users</a></li>
-                <li><a href="/admin/businesses">Businesses</a></li>
+                <li><a href="/admin/businesses">Businesss</a></li>
                 <li><a href="#">What We Do</a></li>
                 <li><a href="#">Get In Touch</a></li>
             </ul>
         </nav>
     </aside>
-
     <section class="content">
 
         <div class="container">
-            <table>
-                <tr>
-                    <th>Username</th>
-                    <th>User type</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Action</th>
-                </tr>
-                @foreach ($data as $user)
 
-                <tr>
-                    <td class="user">{{$user->user_name}}</td>
-                    <td class="user">{{$user->type}}</td>
-                    <td class="user">{{$user->email}}</td>
-                    <td class="user">{{$user->status}}</td>
-                    <td><a href="/admin/user/edit/{{$user->id}}">Edit</a></td>
-                    <td><a href="/admin/user/delete/{{$user->id}}">Delete</a></td>
-                    <td><a href="/admin/user/action/{{$user->id}}">Action</a></td>
-                </tr>
+            <form method="post">
+                @csrf
+                <table>
+
+                    <tr>
+                        <td>Business name</td>
+                        <td><input type="text" name="business_name" value="{{$business['business_name']}}"></td>
+                    </tr>
+                    <tr>
+                        <td>Business type</td>
+                        <td><input type="text" name="business_type" value="{{$business['business_type']}}"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Business Location</td>
+                        <td><input type="location" name="location" value="{{$business['location']}}"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="submit" type="submit" name="update" value="Update"></td>
+
+                    </tr>
+
+                </table>
+                {{session('msg')}}
+
+                @foreach ($errors->all() as $err)
+                <div class="error">{{$err}} </div> <br>
                 @endforeach
-            </table>
+            </form>
+
         </div>
+
     </section>
 </body>
 

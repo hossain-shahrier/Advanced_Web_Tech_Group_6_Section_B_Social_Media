@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Home</title>
+    <title>Business List</title>
     <style>
         header {
             height: 7.5rem;
@@ -151,7 +150,7 @@
 
         th,
         td {
-            padding: 35px;
+            padding: 25px;
         }
 
         td a {
@@ -166,7 +165,6 @@
             background-color: #4C2650;
         }
     </style>
-    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
@@ -202,24 +200,24 @@
         <div class="container">
             <table>
                 <tr>
-                    <th>Username</th>
-                    <th>User type</th>
+                    <th>Business name</th>
+                    <th>Business type</th>
                     <th>Email</th>
-                    <th>Status</th>
+                    <th>Phone</th>
+                    <th>Location</th>
                     <th>Edit</th>
                     <th>Delete</th>
-                    <th>Action</th>
                 </tr>
-                @foreach ($data as $user)
+                @foreach ($data as $business)
 
                 <tr>
-                    <td class="user">{{$user->user_name}}</td>
-                    <td class="user">{{$user->type}}</td>
-                    <td class="user">{{$user->email}}</td>
-                    <td class="user">{{$user->status}}</td>
-                    <td><a href="/admin/user/edit/{{$user->id}}">Edit</a></td>
-                    <td><a href="/admin/user/delete/{{$user->id}}">Delete</a></td>
-                    <td><a href="/admin/user/action/{{$user->id}}">Action</a></td>
+                    <td class="user">{{$business->business_name}}</td>
+                    <td class="user">{{$business->business_type}}</td>
+                    <td class="user">{{$business->email}}</td>
+                    <td class="user">{{$business->phone}}</td>
+                    <td class="user">{{$business->location}}</td>
+                    <td><a href="/admin/business/edit/{{$business->id}}">Edit</a></td>
+                    <td><a href="/admin/business/delete/{{$business->id}}">Delete</a></td>
                 </tr>
                 @endforeach
             </table>

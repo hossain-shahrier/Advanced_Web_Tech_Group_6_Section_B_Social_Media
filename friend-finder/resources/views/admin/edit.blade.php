@@ -193,7 +193,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="/admin/home">Users</a></li>
-                <li><a href="#">Communities</a></li>
+                <li><a href="/admin/businesses">Communities</a></li>
                 <li><a href="#">What We Do</a></li>
                 <li><a href="#">Get In Touch</a></li>
             </ul>
