@@ -15,7 +15,6 @@ class HomeController extends Controller
             ->first();
 
         return view('user.index')
-            ->with('name', $user->name)
-            ->with('profile_pic', $user->profile_pic);
+            ->with('user', $user);
     }
 }
