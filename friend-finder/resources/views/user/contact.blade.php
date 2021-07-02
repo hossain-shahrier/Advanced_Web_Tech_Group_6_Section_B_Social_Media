@@ -9,9 +9,6 @@
 
 @section('main_content')
     {{-- main content --}}
-    <div class="google-maps">
-        <div id="map" class="map contact-map"></div>
-    </div>
     <div id="page-contents">
         <div class="container">
             <div class="row">

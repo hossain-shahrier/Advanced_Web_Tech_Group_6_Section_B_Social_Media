@@ -11,7 +11,9 @@ body {
 
 input,
 button {
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     border: none;
     outline: none;
     background: none;
@@ -94,9 +96,12 @@ h1 {
 }
 
 #message_send {
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     background-color: #8c38ff;
     padding: 4px 8px;
     color: #fff;
     text-transform: uppercase;
 }
+
