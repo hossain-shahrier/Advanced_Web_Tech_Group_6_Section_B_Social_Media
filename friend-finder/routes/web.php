@@ -54,8 +54,8 @@ Route::get('/recruiter/applicantview/{id}', 'RecruiterController@viewapplicantde
 Route::get('/recruiter/viewfiles/{id}', 'RecruiterController@viewfiles');
 Route::get('/recruiter/download/{file}', 'RecruiterController@download');
 
-Route::get('/recruiter/viewdocument/{id}', 'RecruiterController@viewdocument');
-Route::get('/recruiter/downloaddocument/{document}', 'RecruiterController@downloaddocument');
+// Route::get('/recruiter/viewdocument/{id}', 'RecruiterController@viewdocument');
+// Route::get('/recruiter/downloaddocument/{document}', 'RecruiterController@downloaddocument');
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -187,15 +187,15 @@ class RecruiterController extends Controller
         return response()->download('upload/' . $file);
     }
 
-    public function viewdocument($id){
-        $document = JobApply::where('id', $id)
-                           ->get();
+    // public function viewdocument($id){
+    //     $document = JobApply::where('id', $id)
+    //                        ->get();
 
-        return view('recruiter.viewdocument')->with('document', $document);
-    }
+    //     return view('recruiter.viewdocument')->with('document', $document);
+    // }
 
-    public function downloaddocument($document){
-        return response()->download('upload/' . $document);
-    }
+    // public function downloaddocument($document){
+    //     return response()->download('upload/' . $document);
+    // }
 
 }
