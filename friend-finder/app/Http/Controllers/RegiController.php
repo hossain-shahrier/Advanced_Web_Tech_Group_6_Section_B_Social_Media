@@ -10,7 +10,8 @@ class RegiController extends Controller
 {
     public function index()
     {
-        return view('regi.index');
+        // return view('regi.index');
+        echo "Hello";
     }
 
     public function create(RegistrationRequest $req)
