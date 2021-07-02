@@ -26,6 +26,7 @@ Route::post('/registration', 'RegiController@create');
 Route::group(['middleware' => ['session']], function () {
 
     Route::get('/home', 'HomeController@index');
+    Route::get('/exportdata', 'UserController@export');
     Route::get('/profile', 'UserController@profile');
     Route::post('/profile', 'UserController@post');
     Route::get('/about', 'UserController@about');

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersDataExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegistrationRequest;
 use App\Models\User;
@@ -121,5 +123,10 @@ class UserController extends Controller
         return view("user.message")
             ->with('user', $user)
             ->with('msg', $msg);
+    }
+
+    public function export()
+    {
+        return Excel::download(new UsersDataExport, 'users.xlsx');
     }
 }
