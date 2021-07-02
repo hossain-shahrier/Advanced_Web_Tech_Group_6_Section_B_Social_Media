@@ -58,9 +58,10 @@ class BusinessController extends Controller
      * @param  \App\Models\business  $business
      * @return \Illuminate\Http\Response
      */
-    public function show(business $business)
+    public function show($id)
     {
-        //
+        $data = DB::table('businesses')->get();
+        return view('admin.businessProfit')->with('data', $data);
     }
 
     /**

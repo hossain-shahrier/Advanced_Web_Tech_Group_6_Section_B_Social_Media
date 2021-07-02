@@ -151,7 +151,7 @@
 
         th,
         td {
-            padding: 35px;
+            padding: 20px;
         }
 
         td a {
@@ -209,6 +209,7 @@
                     <th>Edit</th>
                     <th>Delete</th>
                     <th>Action</th>
+                    <th>Message</th>
                 </tr>
                 @foreach ($data as $user)
 
@@ -220,6 +221,7 @@
                     <td><a href="/admin/user/edit/{{$user->id}}">Edit</a></td>
                     <td><a href="/admin/user/delete/{{$user->id}}">Delete</a></td>
                     <td><a href="/admin/user/action/{{$user->id}}">Action</a></td>
+                    <td><a href="/admin/user/message/{{$user->id}}">Message</a></td>
                 </tr>
                 @endforeach
             </table>

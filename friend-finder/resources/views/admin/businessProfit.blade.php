@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>User Edit</title>
+    <title>Business List</title>
     <style>
         header {
             height: 7.5rem;
@@ -111,9 +110,9 @@
         }
 
         .sidebar {
-            position: absolute;
+            position: fixed;
             width: 15%;
-            height: 100%;
+            height: 100vh;
             background: #312450;
             align-items: center;
             display: flex;
@@ -134,9 +133,15 @@
         }
 
 
+        /* .content {
+            width: 100%;
+            float: left;
+        } */
 
         .container {
-            margin-top: 50px;
+
+            margin-top: 100px;
+            margin-left: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -145,38 +150,27 @@
 
         th,
         td {
-            padding: 35px;
+            padding: 15px;
         }
 
-
-
-        input {
-            border: 2px solid #763A7C;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        .submit {
-            color: whitesmoke;
-            border-radius: 50px;
-            border-style: none;
+        td a {
             background-color: #763A7C;
+            padding: 5px 15px;
+            border-radius: 50px;
+            color: whitesmoke;
+            cursor: pointer;
         }
 
-        .submit:hover {
-            background-color: #5B2E5F;
-        }
-
-        .error {
-            padding-bottom: 2px;
-            margin-left: 100px;
+        td a:hover {
+            background-color: #4C2650;
         }
     </style>
-    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <header class="header">
+
+
         <div class="wrap">
             <div class="logo">
                 Logo
@@ -186,6 +180,7 @@
             </div>
         </div>
     </header>
+    <div></div>
     <div class="hero">
         <a href="/logout">Logout</a>
     </div>
@@ -199,46 +194,24 @@
             </ul>
         </nav>
     </aside>
+
     <section class="content">
 
         <div class="container">
+            <table>
+                <tr>
+                    <th>Business name</th>
+                    <th>Profit</th>
+                </tr>
+                @foreach ($data as $business)
 
-            <form method="post">
-                @csrf
-                <table>
-
-                    <tr>
-                        <td>Username</td>
-                        <td><input type="text" name="username" value="{{$user['username']}}"></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="password" value="{{$user['password']}}"></td>
-                    </tr>
-                    <tr>
-                        <td>Name</td>
-                        <td><input type="name" name="name" value="{{$user['name']}}"></td>
-                    </tr>
-                    <tr>
-                        <td>Type</td>
-                        <td><input type="text" name="type" value="{{$user['type']}}"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input class="submit" type="submit" name="update" value="Update"></td>
-
-                    </tr>
-
-                </table>
-                {{session('msg')}}
-
-                @foreach ($errors->all() as $err)
-                <div class="error">{{$err}} </div> <br>
+                <tr>
+                    <td class="user">{{$business->business_name}}</td>
+                    <td class="user">{{$business->profit}}</td>
+                </tr>
                 @endforeach
-            </form>
-
+            </table>
         </div>
-
     </section>
 </body>
 

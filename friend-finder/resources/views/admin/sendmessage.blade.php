@@ -145,7 +145,7 @@
 
         th,
         td {
-            padding: 35px;
+            padding: 20px;
         }
 
 
@@ -170,6 +170,11 @@
         .error {
             padding-bottom: 2px;
             margin-left: 100px;
+        }
+
+        textarea {
+            border-radius: 10;
+            border: 2px solid #763A7C;
         }
     </style>
     <link rel="stylesheet" href="./css/styles.css">
@@ -206,26 +211,14 @@
             <form method="post">
                 @csrf
                 <table>
+                    <tr>
+                        <td>Message</td>
+                        <td><textarea name="message" id="" cols="80" rows="20"></textarea></td>
+                    </tr>
 
                     <tr>
-                        <td>Username</td>
-                        <td><input type="text" name="username" value="{{$user['username']}}"></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="password" value="{{$user['password']}}"></td>
-                    </tr>
-                    <tr>
-                        <td>Name</td>
-                        <td><input type="name" name="name" value="{{$user['name']}}"></td>
-                    </tr>
-                    <tr>
-                        <td>Type</td>
-                        <td><input type="text" name="type" value="{{$user['type']}}"></td>
-                    </tr>
-                    <tr>
                         <td></td>
-                        <td><input class="submit" type="submit" name="update" value="Update"></td>
+                        <td><input class="submit" type="submit" name="send" value="Send"></td>
 
                     </tr>
 

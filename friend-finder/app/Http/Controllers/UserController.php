@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EditRequest;
+use App\Http\Requests\SendMessageRequest;
+use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -29,14 +31,24 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store message a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function messageIndex($id)
     {
-        //
+        $users = User::find($id);
+
+        return view('admin.sendmessage')->with('users', $users);
+    }
+    public function message(SendMessageRequest $request, $id)
+    {
+        $user = User::find($id);
+        $receiver = Message::where('email', $user->email)->first();
+        $receiver->message = $request->message;
+        $receiver->save();
+        return redirect()->route('admin.home');
     }
 
     /**

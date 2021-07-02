@@ -150,7 +150,7 @@
 
         th,
         td {
-            padding: 25px;
+            padding: 15px;
         }
 
         td a {
@@ -205,6 +205,7 @@
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Location</th>
+                    <th>Profit</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -216,6 +217,7 @@
                     <td class="user">{{$business->email}}</td>
                     <td class="user">{{$business->phone}}</td>
                     <td class="user">{{$business->location}}</td>
+                    <td><a href="/admin/business/profit/{{$business->id}}">Profit</a></td>
                     <td><a href="/admin/business/edit/{{$business->id}}">Edit</a></td>
                     <td><a href="/admin/business/delete/{{$business->id}}">Delete</a></td>
                 </tr>

@@ -32,7 +32,10 @@ Route::get('/admin/user/edit/{id}', 'UserController@edit');
 Route::post('/admin/user/edit/{id}', 'UserController@update');
 Route::get('/admin/user/delete/{id}', 'UserController@destroy');
 Route::get('/admin/user/action/{id}', 'UserController@action');
+Route::get('/admin/user/message/{id}', 'UserController@messageIndex');
+Route::post('/admin/user/message/{id}', 'UserController@message');
 // Business Information
 Route::get('/admin/business/edit/{id}', 'BusinessController@edit');
 Route::post('/admin/business/edit/{id}', 'BusinessController@update');
 Route::get('/admin/business/delete/{id}', 'BusinessController@destroy');
+Route::get('/admin/business/profit/{id}', 'BusinessController@show');
