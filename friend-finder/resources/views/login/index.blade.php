@@ -28,6 +28,11 @@
                 <td></td>
                 <td><input type="submit" name="Login" value="Login" class="btn btn-primary"></td>
             </tr>
+            <tr>
+                <td></td>
+                <td><a href="/google" class="btn btn-secondary"><i class="fa fa-google"></i> Sign in With Google</a>
+                </td>
+            </tr>
         </table>
     </form>
     {{ session('msg') }}
