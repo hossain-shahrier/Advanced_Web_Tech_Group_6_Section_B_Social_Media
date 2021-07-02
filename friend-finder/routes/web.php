@@ -17,6 +17,8 @@ use Illuminate\Http\Response;
 
 Route::get('/', 'LoginController@index');
 Route::post('/', 'LoginController@verify');
+Route::get('/google', 'LoginController@google');
+Route::get('/google/redirect', 'LoginController@googleRedirect');
 Route::get('/logout', 'LogoutController@index');
 Route::get('/registration', 'RegiController@index');
 Route::post('/registration', 'RegiController@create');
