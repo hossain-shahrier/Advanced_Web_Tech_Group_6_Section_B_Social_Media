@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Community;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -26,6 +27,26 @@ class AdminController extends Controller
         }
     }
     public function show()
+    {
+        $data  = DB::table('communities')->get();
+        return view('admin.community')->with('data', $data);
+    }
+    public function verify($id)
+    {
+        $community = Community::find($id);
+        if ($community->verified == 0) {
+            $community->verified++;
+            $community->status =  "Not verified";
+            $community->save();
+            return redirect()->route('admin.home');
+        } else {
+            $community->verified--;
+            $community->status =  "verified";
+            $community->save();
+            return redirect()->route('admin.home');
+        }
+    }
+    public function community()
     {
     }
 }

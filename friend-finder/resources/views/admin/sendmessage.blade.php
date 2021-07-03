@@ -199,8 +199,8 @@
             <ul>
                 <li><a href="/admin/home">Users</a></li>
                 <li><a href="/admin/businesses">Businesses</a></li>
-                <li><a href="#">What We Do</a></li>
-                <li><a href="#">Get In Touch</a></li>
+                <li><a href="/admin/communities">Communities</a></li>
+                <li><a href="/admin/privacy">Privacy policy</a></li>
             </ul>
         </nav>
     </aside>
@@ -219,7 +219,6 @@
                     <tr>
                         <td></td>
                         <td><input class="submit" type="submit" name="send" value="Send"></td>
-
                     </tr>
 
                 </table>

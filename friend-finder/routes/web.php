@@ -28,6 +28,7 @@ Route::group(['middleware' => ['session']], function () {
 
 // Admin panel routes
 // Edit User's Information
+
 Route::get('/admin/user/edit/{id}', 'UserController@edit');
 Route::post('/admin/user/edit/{id}', 'UserController@update');
 Route::get('/admin/user/delete/{id}', 'UserController@destroy');
@@ -39,3 +40,11 @@ Route::get('/admin/business/edit/{id}', 'BusinessController@edit');
 Route::post('/admin/business/edit/{id}', 'BusinessController@update');
 Route::get('/admin/business/delete/{id}', 'BusinessController@destroy');
 Route::get('/admin/business/profit/{id}', 'BusinessController@show');
+// Community Routes
+Route::get('/admin/communities/action/{id}', 'AdminController@verify');
+Route::get('/admin/communities', 'AdminController@show');
+Route::get('admin/community', 'AdminController@community')->name('admin.community');
+// Route::post('/admin/home', 'UserController@index');
+// Privacy Policy
+Route::get('/admin/privacy', 'PrivacyController@index');
+Route::post('/admin/privacy', 'PrivacyController@update');

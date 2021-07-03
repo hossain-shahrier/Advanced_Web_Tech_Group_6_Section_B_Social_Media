@@ -15,9 +15,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $data = User::where('user_name', $request->search)->first();
+        return view('admin.home')->with('data', $data);
     }
 
     /**

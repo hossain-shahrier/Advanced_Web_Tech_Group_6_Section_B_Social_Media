@@ -210,69 +210,29 @@
             </ul>
         </nav>
     </aside>
-    <form method="post">
-        @csrf
-        <div class="search">
-            <input id="search_input" name="search" type="search" placeholder="Search by Username" />
-            <input type="submit" value="search" style="margin:10px;padding:10px;background-color:#763A7C; border:none;border-radius:20px;color:whitesmoke">
-        </div>
-        {{session('msg')}}
-
-        @foreach ($errors->all() as $err)
-        <div class="error">{{$err}} </div> <br>
-        @endforeach
-    </form>
 
     <section class="content">
         <div class="container">
 
             <table>
                 <tr>
-                    <th>Username</th>
-                    <th>User type</th>
-                    <th>Email</th>
+                    <th>Id</th>
+                    <th>Name</th>
                     <th>Status</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
                     <th>Action</th>
-                    <th>Message</th>
                 </tr>
-                @foreach ($data as $user)
+                @foreach ($data as $community)
 
                 <tr>
-                    <td class="user">{{$user->user_name}}</td>
-                    <td class="user">{{$user->type}}</td>
-                    <td class="user">{{$user->email}}</td>
-                    <td class="user">{{$user->status}}</td>
-                    <td><a href="/admin/user/edit/{{$user->id}}">Edit</a></td>
-                    <td><a href="/admin/user/delete/{{$user->id}}">Delete</a></td>
-                    <td><a href="/admin/user/action/{{$user->id}}">Action</a></td>
-                    <td><a href="/admin/user/message/{{$user->id}}">Message</a></td>
-                    <td>
-                        <div id="result" class="result"></div>
-                    </td>
+                    <td class="user">{{$community->id}}</td>
+                    <td class="user">{{$community->name}}</td>
+                    <td class="user">{{$community->status}}</td>
+                    <td><a href="/admin/communities/action/{{$community->id}}">Action</a></td>
                 </tr>
                 @endforeach
             </table>
         </div>
     </section>
-    <script type="text/javascript">
-        function search() {
-            const data = document.getElementById('search_input').value;
-
-            const xhttp = new XMLHttpRequest();
-            xhttp.open('POST', 'admin/home', true);
-
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById('result').innerHTML = (xhttp.responseText);
-                }
-            }
-            xhttp.send('search = ' + data);
-
-        }
-    </script>
 </body>
 
 </html>
