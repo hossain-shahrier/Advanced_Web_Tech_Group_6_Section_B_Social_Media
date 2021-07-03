@@ -1,0 +1,82 @@
+@extends('layouts.master')
+
+@section('content')
+<br>
+
+<center><h2>Update Job Information</h2> </center>
+
+<form method="post" enctype="multipart/form-data">  
+  @csrf
+    <div class="row g-3">
+  <div class="col-md-5">
+    <label for="jobtitle" class="form-label">Job Title</label>
+    <input type="text" class="form-control" id="jobtitle" name="jobtitle" value="{{$job['title']}}" >
+  </div>
+  <div class="col-md-6">
+    <label for="jobinfo" class="form-label">Job Information</label>
+    <!-- <input type="" class="form-control" id="jobinfo"> -->
+    <textarea class="form-control" id="jobinfo" name="jobinfo" >{{$job['info']}}</textarea>
+  </div>
+  <div class="col-2">
+    <label for="jobcategory" class="form-label">Job Category</label>
+    <input type="text" class="form-control" id="jobcategory" name="jobcategory" value="{{$job['category']}}" >
+  </div>
+
+  <div class="col-md-4">
+    <label for="jobtype" class="form-label">Job Type</label>
+    <select id="jobtype" class="form-select" name="jobtype" value="{{$job['type']}}">
+    <option>Select Job Type</option>
+                        <option value="FullTime">Full Time</option>
+                        <option value="PartTime">Part Time</option>
+                        <option value="Partership">Partership</option>
+                        
+    </select>
+  </div>
+  
+
+  <div class="col-7">
+    <label for="joblocation" class="form-label">Job Location</label>
+    <!-- <input type="text" class="form-control" id="joblocation" placeholder="Apartment, studio, or floor"> -->
+    <textarea class="form-control" id="joblocation" name="joblocation">{{$job['location']}}</textarea>
+
+  </div>
+  
+  <div class="col-md-6">
+    <label for="jobvacancy" class="form-label">Vacancy</label>
+    <input type="text" class="form-control" id="jobvacancy" name="jobvacancy">
+    <br>
+  </div>
+  <div class="col-md-6">
+    <label for="jobapplicant" class="form-label">Job Applicant</label>
+    <input type="text" class="form-control" id="jobapplicant" name="jobapplicant" value="{{$job['applicants']}}">
+    <br>
+  </div>
+ 
+  <!-- <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div> -->
+
+   
+
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" value="Update Job">Update Job</button>
+  </div>
+</div>
+</form>
+<center>
+  @foreach($errors->all() as $error)
+      
+      {{$error}} <br>
+@endforeach
+</center>
+@endsection
