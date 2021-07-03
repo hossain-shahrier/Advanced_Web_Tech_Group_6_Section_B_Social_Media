@@ -6,6 +6,7 @@ use App\Exports\UsersDataExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegistrationRequest;
+use App\Http\Requests\PostRequest;
 use App\Models\User;
 use App\Models\Follow;
 use App\Models\Post;
@@ -31,7 +32,7 @@ class UserController extends Controller
             ->with('rand', $rand);
     }
 
-    public function Post(Request $req)
+    public function Post(PostRequest $req)
     {
         $post = new Post;
         $post->post = $req->post;
